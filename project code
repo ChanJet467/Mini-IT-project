@@ -1,0 +1,4 @@
+String digitButtonText[] = {"7", "8", "9", "4", "5", "6", "1", "2", "3", "0", "." };  
+String operatorButtonText[] = {"+", "-", "*", "/", "sqrt", "^", "%","1/X", "=", "sin", "cos", "tan", "log" };  
+String memoryButtonText[] = {"MC", "MR", "MS", "M+" };  
+String specialButtonText[] = {"C", "CE", "Backspace"};  
