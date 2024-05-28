@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lean Body</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Athlete Body</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bodybuilding.html">Bodybuilding</a></li>
+                <li><a href="shredded.html">Shredded Body</a></li>
+                <li><a href="powerlifter.html">Powerlifter Body</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="content">
+            <img src="Screenshot-2020-10-13-at-14.webp" alt="Lean Body">
+            <div class="text-content">
+                <h2>Athlete Body</h2>
+                <p>Maintain a toned and lean body with balanced workouts and nutrition.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Lean Body Fitness. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
