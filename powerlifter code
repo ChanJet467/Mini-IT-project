@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powerlifter Body</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Powerlifter Body</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bodybuilding.html">Bodybuilding</a></li>
+                <li><a href="shredded.html">Shredded Body</a></li>
+                <li><a href="lean.html">Lean Body</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="content">
+            <img src="eddie-hall-getting-shredded-transformation-header.jpg" alt="Powerlifter Body">
+            <div class="text-content">
+                <h2>Powerlifter Body</h2>
+                <p>Build immense strength and muscle mass with our powerlifting routines.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Powerlifter Body Fitness. All rights reserved.</p>
+    </footer>
+</body>
+</html>
