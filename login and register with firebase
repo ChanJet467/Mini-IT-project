@@ -68,6 +68,11 @@ function login () {
         alert(error_message)
     })
 }
+function validate_email(email){
+    expression = /^[^@]+@\w+(\.\w+)+\w$/.test(str);
+    if (expression.test == true){
+        return true
+    }else {return false}
 
 function validate_password(password){
     if (password < 6){
