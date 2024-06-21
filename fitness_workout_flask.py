@@ -85,29 +85,5 @@ def comment_wall():
         return render_template('diet_comment_wall_fitness_webapp.html', comments=comments)
     return render_template('comment_wall_fitness_webapp.html', comments=comments)
 
-# @app.route('/comment_wall', methods=['GET', 'POST'])
-# def comment_wall():
-#     if 'user_id' not in session:
-#         return redirect('/')
-#
-#     conn = get_db()
-#     cursor = conn.cursor()
-#
-#     if request.method == 'POST':
-#         title = request.form['title']
-#         content = request.form['content']
-#         if not title or not content:
-#             flash('Title / Content is empty', 'error')
-#         else:
-#             cursor.execute("INSERT INTO comments (title, content, userid) VALUES (?, ?, ?)",
-#                            (title, content, session['user_id']))
-#             conn.commit()
-#             flash('Comment saved successfully', 'success')
-#
-#     cursor.execute(
-#         "SELECT comments.title, comments.content, users.email FROM comments JOIN users ON comments.userid = users.userid")
-#     comments = cursor.fetchall()
-#     return render_template('comment_wall_fitness_webapp.html', comments=comments)
-
 if __name__ == '__main__':
     app.run(debug=True)
