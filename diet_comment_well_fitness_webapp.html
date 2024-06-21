@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Comments Wall - Fitness App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .header {
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+        .switch-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .switch-button:hover {
+            background-color: #4cae4c;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow-y: auto;
+            padding-bottom: 60px; /* Equal to footer height */
+        }
+        .comment {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+        }
+        .comment h3 {
+            margin: 0;
+        }
+        .comment p {
+            margin: 10px 0 0 0;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #0275d8;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            height: 60px;
+        }
+        .footer input, .footer button {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .footer button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .footer button:hover {
+            background-color: #4cae4c;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        .flash {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Diet</h1>
+        <p>Comment Wall For All Diet Things</p>
+        <button class="switch-button" onclick="window.location.href='/comment_wall?type=workout'">Workout Comment Wall</button>
+    </div>
+    <div class="container">
+        {% if comments %}
+            {% for comment in comments %}
+                <div class="comment">
+                    <h3>{{ comment.title }}</h3>
+                    <p><strong>{{ comment.email }}</strong></p>
+                    <p>{{ comment.content }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>There's nothing here. Post something today!</p>
+        {% endif %}
+    </div>
+    <div class="footer">
+        <form method="POST" action="/comment_wall?type=diet">
+            <input type="text" name="title" placeholder="Title" required>
+            <input type="text" name="content" placeholder="Content" required>
+            <button type="submit">Post</button>
+            <button type="button" onclick="window.location.href='/logout'">Logout</button>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <p class="flash {{ category }}">{{ message }}</p>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
+
