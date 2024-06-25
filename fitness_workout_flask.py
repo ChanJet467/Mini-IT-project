@@ -43,7 +43,7 @@ def register():
         if user:
             error = 'Duplicate account registration'
             return render_template('register_fitness_webapp.html', error=error)
-        hashed_password = generate_password_hash(password, method='sha256')
+        hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
         cursor.execute("INSERT INTO users (email, password) VALUES (?, ?)", (email, hashed_password))
         conn.commit()
         flash('Successfully registered!', 'success')
@@ -84,6 +84,47 @@ def comment_wall():
     if comment_type == 'diet':
         return render_template('diet_comment_wall_fitness_webapp.html', comments=comments)
     return render_template('comment_wall_fitness_webapp.html', comments=comments)
+
+@app.route('/info', methods=['GET', 'POST'])
+
+def index():
+
+return render_template('index.html')
+
+
+@app.route('/bodybuilding')
+
+def bodybuilding():
+
+return render_template('bodybuilding.html')
+
+
+@app.route('/shredded')
+
+def shredded():
+
+return render_template('shredded.html')
+
+
+@app.route('/athlete')
+
+def athlete():
+
+return render_template('athlete.html')
+
+
+@app.route('/powerlifter')
+
+def powerlifter():
+
+return render_template('powerlifter.html')
+
+
+@app.route('/lean')
+
+def lean():
+
+return render_template('lean.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
