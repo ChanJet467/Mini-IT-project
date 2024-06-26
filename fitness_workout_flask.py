@@ -55,7 +55,6 @@ def logout():
     session.clear()
     return redirect('/')
 
-
 @app.route('/comment_wall', methods=['GET', 'POST'])
 def comment_wall():
     if 'user_id' not in session:
@@ -86,45 +85,28 @@ def comment_wall():
     return render_template('comment_wall_fitness_webapp.html', comments=comments)
 
 @app.route('/info', methods=['GET', 'POST'])
-
 def index():
-
-return render_template('index.html')
-
+    return render_template('index.html')
 
 @app.route('/bodybuilding')
-
 def bodybuilding():
-
-return render_template('bodybuilding.html')
-
+    return render_template('bodybuilding.html')
 
 @app.route('/shredded')
-
 def shredded():
-
-return render_template('shredded.html')
-
+    return render_template('shredded.html')
 
 @app.route('/athlete')
-
 def athlete():
-
-return render_template('athlete.html')
-
+    return render_template('athlete.html')
 
 @app.route('/powerlifter')
-
 def powerlifter():
-
-return render_template('powerlifter.html')
-
+    return render_template('powerlifter.html')
 
 @app.route('/lean')
-
 def lean():
-
-return render_template('lean.html')
+    return render_template('lean.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
